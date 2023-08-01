@@ -11,6 +11,12 @@ class Transaction extends Component{
 componentDidMount(){
     this.getAlltransactions()
 }
+
+onDelete=(id)=>{
+    const {allTransaction}=this.state
+    const filterTransactions=allTransaction.filter(each=>(each.id!==id))
+    this.setState({allTransaction:filterTransactions})
+}
    
 getAlltransactions=async()=>{
     const url=`https://bursting-gelding-24.hasura.app/api/rest/all-transactions?limit=${20}&offset=${0}`
@@ -51,7 +57,7 @@ getAlltransactions=async()=>{
                 <ul className="last-three-transaction-container">
                 {
                     this.state.allTransaction.map(eachTransaction=>(
-                        <LastThreeCard  transaction={eachTransaction} key={eachTransaction.id}/>
+                        <LastThreeCard  transaction={eachTransaction} onDelete={this.onDelete} key={eachTransaction.id}/>
                     ))
                 }
             </ul>

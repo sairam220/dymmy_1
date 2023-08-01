@@ -5,9 +5,12 @@ import './index.css'
 
 
 const LastThreeCard=(props)=>{
-    const {transaction}=props
-    const {amount,category,date,transactionName,type}=transaction
+    const {transaction,onDelete}=props
+    const {amount,category,date,transactionName,id,type}=transaction
     
+    const deleteItem=()=>{
+           onDelete(id)
+    }
 
     return(
           <div className='last-three-card'>
@@ -17,7 +20,7 @@ const LastThreeCard=(props)=>{
                <p className='category'>{date}</p>
                <p className='amount'><BiDollar/>{amount}</p>
                <BiEditAlt className='edit'/>
-               <RiDeleteBin5Line className='delete'/>
+               <RiDeleteBin5Line className='delete' onClick={deleteItem}/>
           </div>
     )
 }

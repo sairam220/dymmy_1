@@ -52,6 +52,12 @@ class Home extends Component{
         this.setState({lastThreeTransactions:res})
       }
 
+      onDelete=(id)=>{
+        const {lastThreeTransactions}=this.state
+        const filterTransactions=lastThreeTransactions.filter(each=>(each.id!==id))
+        this.setState({lastThreeTransactions:filterTransactions})
+    }
+
       getLastSevenDaysTransaction=async()=>{
         const url=`https://bursting-gelding-24.hasura.app/api/rest/daywise-totals-7-days`
         const options={
@@ -148,7 +154,7 @@ class Home extends Component{
             <ul className="last-three-transaction-container">
                 {
                     this.state.lastThreeTransactions.map(eachTransaction=>(
-                        <LastThreeCard  transaction={eachTransaction} key={eachTransaction.id}/>
+                        <LastThreeCard  transaction={eachTransaction} key={eachTransaction.id} onDelete={this.onDelete}/>
                     ))
                 }
             </ul>

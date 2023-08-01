@@ -61,4 +61,5 @@ color: lightskyblue;
 height: 20px;
 flex-shrink: 0;
 color: red;
+cursor: pointer;
 }

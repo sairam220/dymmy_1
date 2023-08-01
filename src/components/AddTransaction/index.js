@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.css'
+import { Link } from 'react-router-dom';
 
 const AddTransactionForm = ({ onAddTransaction }) => {
   const [transactionName, setTransactionName] = useState('');
@@ -10,13 +11,13 @@ const AddTransactionForm = ({ onAddTransaction }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate the form data
+    
     if (!transactionName || !amount || !date) {
       alert('Please fill in all the required fields.');
       return;
     }
 
-    // Convert the amount to a number
+    
     const amountValue = parseFloat(amount);
 
     // Create a new transaction object
@@ -92,7 +93,9 @@ const AddTransactionForm = ({ onAddTransaction }) => {
           onChange={(e) => setDate(e.target.value)}
         />
       </div>
+      <Link to="/home">
       <button type="submit">Add Transaction</button>
+      </Link>
     </form>
   );
 };
