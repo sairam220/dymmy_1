@@ -12,7 +12,8 @@ import {
 }
 from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './Login.css'
 
 class Login extends Component{

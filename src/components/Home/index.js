@@ -107,7 +107,8 @@ class Home extends Component{
    this.setState({dayName:daysNames})
    this.setState({credit:creditValues.slice(0,7)})
    this.setState({debit:debitValues.slice(0,7)})
-
+   console.log(creditValues)
+   console.log(debitValues)
     
 
       }

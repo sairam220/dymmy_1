@@ -9,10 +9,28 @@ class BarChart extends Component {
       
         series: [{
           name: 'Debit',
-          data: debit
+          data: [
+            21298,
+            8000,
+            4500,
+            4000,
+            14108,
+            10001,
+            1500,
+            19000
+        ]
         }, {
           name: 'Credit',
-          data: credit
+          data: [
+            12498,
+            11300,
+            10001,
+            1299,
+            15000,
+            13000,
+            12000,
+            10000
+        ]
         }, ],
         options: {
           chart: {
