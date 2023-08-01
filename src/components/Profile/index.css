@@ -1,0 +1,34 @@
+.profile-container {
+  display: flex;
+width: 1030px;
+height: 168px;
+padding: 25px 36px;
+flex-direction: row;
+align-items: flex-start;
+gap: 8px;
+flex-shrink: 0;
+justify-content: space-around;
+border-radius: 25px;
+background: #FFF;
+padding-right: 100px;
+}
+.profile-image{
+  border-radius: 80px;
+  margin-left: 50px;
+}
+.home-container-1{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-item label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+

@@ -1,0 +1,43 @@
+.debit-credit-card{
+    display: flex;
+width: 500px;
+height: 168px;
+padding: 25px 36px;
+flex-direction: row;
+align-items: flex-start;
+gap: 8px;
+flex-shrink: 0;
+border-radius: 25px;
+background: #FFF;
+}
+
+.description{
+    display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 7px;
+}
+
+.debit-credit{
+    color: #16DBAA;
+font-family: sans-serif;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.name{
+    color: #718EBF;
+font-family: sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.debit-cred-image{
+    width: 152.431px;
+height: 130px;
+
+}

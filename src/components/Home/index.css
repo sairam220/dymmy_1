@@ -1,0 +1,47 @@
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.credit-debit-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.Last-Transaction{
+    color: #333B69;
+font-family: sans-serif;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-top: 10px;
+padding-left: 10px;
+}
+
+
+.last-three-transaction-container{
+    display: flex;
+
+
+padding: 12px 25px 8px 24px;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-start;
+gap: 8px;
+flex-shrink: 0;
+border-radius: 25px;
+background: #FFF;
+}
+
+.bar-cahrt-heading{
+    color: #333B69;
+font-family: sans-serif;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-top: 10px;
+padding-left: 10px;
+}

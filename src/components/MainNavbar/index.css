@@ -1,0 +1,30 @@
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-link{
+    padding-top: 10px;
+    width: 200px;
+flex: 1 0 0;
+color: #718EBF;
+text-align: center;
+font-family: sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+list-style: none;
+}
+
+.header-link :hover{
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    
+}
