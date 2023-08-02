@@ -120,6 +120,10 @@ class Home extends Component{
         this.getLastSevenDaysTransaction()
     }
 
+    onEdit=(id)=>{
+         
+    }
+
     getCreditAndDebit=async()=>{
         const url='https://bursting-gelding-24.hasura.app/api/rest/credit-debit-totals'
         const options={
@@ -143,7 +147,7 @@ class Home extends Component{
          return(
             <div className="home-container">
                 <Sidebar/>
-                <div>
+                <div className="sidebar-container-11">
                     
             <Navbar/>
             <div className="credit-debit-container">

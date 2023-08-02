@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Popup from 'reactjs-popup'
 
-import {
-    
-    FaBars,
-    
-}from "react-icons/fa";
 import {FaUserAlt} from 'react-icons/fa'
 import {BiTransfer} from 'react-icons/bi'
 import {AiFillHome} from 'react-icons/ai'
@@ -25,36 +20,38 @@ import {
     ModalDesc,
     ButtonsContainer,
   } from './styledComponents'
+import { useHistory } from 'react-router-dom';
   
+const menuItem=[
+    {
+        path:"/home",
+        name:"Dashboard",
+        icon:<AiFillHome/>
+    },
+    {
+        path:"/all-transactions",
+        name:"Transactions",
+        icon:<BiTransfer/>
+    },
+    
+    
+    {
+        path:"/profile",
+        name:"Profile",
+        icon:<FaUserAlt/>
+    },
+    
+]
 
-const Sidebar = ({children}) => {
-    const[isOpen ,setIsOpen] = useState(true);
-    const toggle = () => setIsOpen (!isOpen);
-    const menuItem=[
-        {
-            path:"/home",
-            name:"Dashboard",
-            icon:<AiFillHome/>
-        },
-        {
-            path:"/all-transactions",
-            name:"Transactions",
-            icon:<BiTransfer/>
-        },
-        
-        
-        {
-            path:"/profile",
-            name:"Profile",
-            icon:<FaUserAlt/>
-        },
-        
-    ]
+class Sidebar extends Component{
+    state={arrayObjects:menuItem,isOpen:true}
+    
+     
+    
 
-    const onClickLogout=()=>{
-         const history=this.props
-         history.push('/')
-    }
+     
+
+    render(){
 
     return (
         <div className="container">
@@ -67,14 +64,14 @@ const Sidebar = ({children}) => {
                </div>
                
                {
-                   menuItem.map((item, index)=>(
+                   this.state.arrayObjects.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" >
                            <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                           <div style={{display: this.state.isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
                        </NavLink>
                    ))
                }
-               <div to='/login'  className="link logout" >
+               <div className="link logout" >
                 <img src='https://res.cloudinary.com/dmov4v1ui/image/upload/v1690812395/Avatar_yxvjco.png' alt='profile'/>
                 <div>
                     <p className='para1'>Rhye</p>
@@ -92,17 +89,18 @@ const Sidebar = ({children}) => {
             >
               {close => (
                 <ModalContainer>
-                  <ModalDesc>Are you sure, you want to logout?</ModalDesc>
+                  <ModalDesc>Are you sure you want to Logout?</ModalDesc>
+                  <ModalDesc>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </ModalDesc>
                   <ButtonsContainer>
-                    <CloseButton
+                    <button
                       type="button"
-                      data-testid="closeButton"
+                      className='button-1'
                       onClick={() => close()}
                     >
                       Cancel
-                    </CloseButton>
+                    </button>
                  <NavLink to='/login'>
-                    <ConfirmButton type="button" onClick={onClickLogout}>
+                    <ConfirmButton type="button">
                       Confirm
                     </ConfirmButton>
                     </NavLink>
@@ -119,6 +117,8 @@ const Sidebar = ({children}) => {
           
        
     );
-};
+}
+
+}
 
 export default Sidebar;

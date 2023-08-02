@@ -18,12 +18,15 @@ font-weight: 600;
 line-height: normal;
 }
 
-.add-tansaction{
+.add-tansaction1{
     color: #343C6A;
 font-family: sans-serif;
 text-align: center;
 font-style: normal;
 height: 35px;
+width: 180px;
+margin-left: 60px;
+margin-bottom: 16px;
 line-height: normal;
 border-radius: 12px;
 background: #2D60FF;

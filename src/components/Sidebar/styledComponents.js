@@ -81,8 +81,8 @@ export const CloseButton = styled.button`
   background-color: transparent;
   border: 1px solid grey;
   padding: 8px;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-right: 6px;
+  padding-left: 6px;
   color: grey;
   margin: 12px;
   outline: none;
@@ -93,14 +93,14 @@ export const CloseButton = styled.button`
   font-size: 12px;
   @media screen and (min-width: 768px) {
     font-size: 15px;
-    padding: 13px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 6px;
+    padding-right: 6px;
+    padding-left: 6px;
   }
 `
 export const ConfirmButton = styled.button`
   align-self: flex-end;
-  background-color: #3b82f6;
+  background-color: red;
   color: white;
   padding: 8px;
   padding-right: 12px;

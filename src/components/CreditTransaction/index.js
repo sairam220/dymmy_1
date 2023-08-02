@@ -46,7 +46,7 @@ getAlltransactions=async()=>{
         return(
             <div className="home-container">
                 <Sidebar/>
-                <div>
+                <div className='sidebar-container-11'>
                 <MainNavbar/>
                 <div className="credit-debit-container">
                 <ul className="last-three-transaction-container">
