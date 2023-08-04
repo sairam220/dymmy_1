@@ -60,14 +60,14 @@ class Profile extends Component{
                 <img src="https://res.cloudinary.com/dmov4v1ui/image/upload/v1690788690/pexels-christina-morillo-1181690_1_n1gs6c.png" alt="Profile" className='profile-image'/>
                 <div className='detailes-card'>
                   <lable className='label' for='name'>Your Name</lable>
-                  <div  className='input-bar' id='code' ><p className='paragraph-input'>{singUser&&singUser.name}</p></div>
+                  <div  className='input-bar' id='code' ><p className='paragraph-input'>Charlene Reed</p></div>
         
         
                   <lable className='label' for='mail'>Email</lable>
-                  <div  className='input-bar' id='code' ><p className='paragraph-input'>{singUser&&singUser.email}</p></div>
+                  <div  className='input-bar' id='code' ><p className='paragraph-input'>charlenereed@gmail.com </p></div>
         
                   <lable className='label' for='dob'>Date of Birth</lable>
-                  <div  className='input-bar' id='code' ><p className='paragraph-input'>{singUser&&singUser.date_of_birth}</p></div>
+                  <div  className='input-bar' id='code' ><p className='paragraph-input'>25 January 1990</p></div>
         
                   <lable className='label' for='address'>Permanent Addres</lable>
                   <div  className='input-bar' id='code' ><p className='paragraph-input'>San Jose, California, USA</p></div>
@@ -83,7 +83,7 @@ class Profile extends Component{
         
                 <div className='detailes-card'>
                   <lable className='label' for='user-name'>User Name</lable>
-                  <div  className='input-bar' id='code' ><p className='paragraph-input'></p>{singUser&&singUser.name}</div>
+                  <div  className='input-bar' id='code' ><p className='paragraph-input'></p>Charlene Reed</div>
          
                   <lable className='label' for='mail'>Password</lable>
                   <div  className='input-bar' id='code' ><p className='paragraph-input'>**********</p></div>
