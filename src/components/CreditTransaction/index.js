@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import Sidebar from '../Sidebar';
+import { Rings } from 'react-loader-spinner'
 import MainNavbar from '../MainNavbar';
 import LastThreeCard from '../LastThreeCard'
+import Header from '../Header';
 
 class CreditTransaction extends Component{
 
@@ -39,13 +41,22 @@ getAlltransactions=async()=>{
       
 }
 
+renderLoadingView= () => (
+    <div className="flex justify-center items-center ">
+      <Rings color="#00BFFF" height={80} width={80} />
+    </div>
+  );
 
 
     render(){
        
         return(
-            <div className="home-container">
+            <div className='main-home-container'>
+            {
+                this.state.allTransaction.length===0?this.renderLoadingView()
+                :<div className="home-container">
                 <Sidebar/>
+                <Header/>
                 <div className='sidebar-container-11'>
                 <MainNavbar/>
                 <div className="credit-debit-container">
@@ -61,6 +72,10 @@ getAlltransactions=async()=>{
             
             </div>
             </div>
+            
+    }
+            </div>
+            
         )
     }
 }

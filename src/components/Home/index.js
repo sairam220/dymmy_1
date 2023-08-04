@@ -1,9 +1,13 @@
 import { Component } from "react";
+import { Rings } from 'react-loader-spinner'
 import Navbar from "../NavBar";
 import Sidebar from "../Sidebar";
 import LastThreeCard from '../LastThreeCard'
 import Debit from "../Debit";
 import Credit from "../Credit";
+import Header from "../Header";
+
+
 import BarChart from '../Barchart'
 import './index.css'
 
@@ -107,8 +111,7 @@ class Home extends Component{
    this.setState({dayName:daysNames})
    this.setState({credit:creditValues.slice(0,7)})
    this.setState({debit:debitValues.slice(0,7)})
-   console.log(creditValues)
-   console.log(debitValues)
+  
     
 
       }
@@ -120,9 +123,14 @@ class Home extends Component{
         this.getLastSevenDaysTransaction()
     }
 
-    onEdit=(id)=>{
-         
-    }
+    
+
+
+renderLoadingView= () => (
+      <div className="flex justify-center items-center ">
+        <Rings color="#00BFFF" height={80} width={80} />
+      </div>
+    );
 
     getCreditAndDebit=async()=>{
         const url='https://bursting-gelding-24.hasura.app/api/rest/credit-debit-totals'
@@ -145,28 +153,44 @@ class Home extends Component{
 
     render(){
          return(
-            <div className="home-container">
-                <Sidebar/>
-                <div className="sidebar-container-11">
-                    
-            <Navbar/>
-            <div className="credit-debit-container">
-                 <Credit credit={this.state.totalDebitAndCredit.credit}/>
-                 <Debit debit={this.state.totalDebitAndCredit.debit}/>
+
+            <div className="main-home-container">
+            {
+                this.state.lastThreeTransactions.length===0?this.renderLoadingView()
+           
+   :        <div className="home-container">
                 
-                 </div>
-            <h1 className="Last-Transaction">Last Transaction</h1>
-            <ul className="last-three-transaction-container">
-                {
-                    this.state.lastThreeTransactions.map(eachTransaction=>(
-                        <LastThreeCard  transaction={eachTransaction} key={eachTransaction.id} onDelete={this.onDelete}/>
-                    ))
-                }
-            </ul>
-            <h1 className="bar-cahrt-heading">Debit & Credit Overview</h1>
-            <BarChart dayName={this.state.dayName} credit={this.state.credit} debit={this.state.debit}/>
-        </div>
+   <Sidebar/>
+   <div className="sidebar-container-11">
+   <Header/>
+       
+<Navbar/>
+<div className="credit-debit-container">
+    <Credit credit={this.state.totalDebitAndCredit.credit}/>
+    <Debit debit={this.state.totalDebitAndCredit.debit}/>
+   
     </div>
+<h1 className="Last-Transaction">Last Transaction</h1>
+<ul className="last-three-transaction-container">
+   
+
+
+   
+       {this.state.lastThreeTransactions.map(eachTransaction=>(
+           <LastThreeCard  transaction={eachTransaction} key={eachTransaction.id} onDelete={this.onDelete}/>
+       ))}
+   
+
+
+</ul>
+<h1 className="bar-cahrt-heading">Debit & Credit Overview</h1>
+<BarChart dayName={this.state.dayName} credit={this.state.credit} debit={this.state.debit}/>
+</div>
+</div>
+    }
+    </div>
+
+    
         )
     }
 }

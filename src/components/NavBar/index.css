@@ -9,6 +9,7 @@ align-self: flex-start;
 
 }
 
+
 .heading{
     color: #343C6A;
 font-family: sans-serif;
@@ -33,4 +34,35 @@ background: #2D60FF;
 border-width: 0px;
 font-weight: 650;
 color: #FFF;
+}
+
+@media screen and (max-width:768px){
+    .navbar{
+        display: flex;
+width: 100%;
+padding: 17px 20px;
+justify-content: space-between;
+align-items: center;
+background: #FFF;
+align-self: flex-start;
+    }
+
+    .add-tansaction1{
+        color: #343C6A;
+    font-family: sans-serif;
+    text-align: center;
+    font-style: normal;
+    height: 35px;
+    width: 34%;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    line-height: normal;
+    border-radius: 12px;
+    background: #2D60FF;
+    border-width: 0px;
+    font-weight: 650;
+    color: #FFF;
+    }
 }

@@ -1,6 +1,4 @@
 import {BiDollar} from 'react-icons/bi'
-import './index.css'
-
 
 
 const Credit=(props)=>{

@@ -11,6 +11,8 @@ border-radius: 25px;
 background: #FFF;
 }
 
+
+
 .description{
     display: inline-flex;
 flex-direction: column;
@@ -40,4 +42,35 @@ line-height: normal;
     width: 152.431px;
 height: 130px;
 
+}
+
+
+@media screen and (max-width: 767px){
+    .debit-credit-card{
+        display: flex;
+    width: 40%;
+    height: 168px;
+    padding: 15;
+    flex-direction: row;
+    align-items: flex-start;
+    
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: #FFF;
+    }
+
+    .debit-cred-image{
+        width: 60px;
+    height: 60px;
+    
+    }
+
+    .debit-credit{
+        color: #16DBAA;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css'
 import Sidebar from '../Sidebar';
 import Navbar from '../NavBar';
+import Header from '../Header';
 
 
 
@@ -18,6 +19,7 @@ const Profile = () => {
    
     <div className="home-container">
                 <Sidebar/>
+                <Header/>
                 <div>
                 <Navbar/>
                 

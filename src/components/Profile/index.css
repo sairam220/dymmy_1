@@ -15,6 +15,9 @@ border-radius: 20px;
 box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45), 25px 0 20px -20px rgba(0, 0, 0, 0.45), 0px 25px 20px -20px rgba(0, 0, 0, 0.45), -25px 0 20px -20px rgba(0, 0, 0, 0.45);
 margin-bottom: 100px;
 }
+
+
+
 .profile-image{
   border-radius: 80px;
   margin-left: 50px;
@@ -62,4 +65,50 @@ margin: 6px;
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+
+@media screen and (max-width:768px) {
+  .profile-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    justify-content: space-around;
+   border-style: solid;
+   border-width: 0.1px;
+   margin: 15px;
+ margin-left: 0px;
+ border-radius: 20px;
+ box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45), 25px 0 20px -20px rgba(0, 0, 0, 0.45), 0px 25px 20px -20px rgba(0, 0, 0, 0.45), -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+ 
+ }
+
+ .input-bar{
+  width: 80px;
+height: 30px;
+
+font: 1em sans-serif;
+border-radius: 15px;
+border: 1px solid #DFEAF2;
+background: #FFF;
+
+
+}
+
+.profile-image{
+  border-radius: 60px;
+  margin-left: 0px;
+  margin-top: 100px;
+}
+
+.detailes-card{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+ 
 }

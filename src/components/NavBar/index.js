@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 import {Popup} from 'reactjs-popup'
-import {v4 as uuidv4} from 'uuid'
 import { useEffect, useState } from 'react'
 
 import './index.css'
@@ -41,18 +40,17 @@ const Navbar=()=>{
             },
             body: JSON.stringify(editedTransaction),
           });
-        const data = await response.json()
-        return response
+       
+        
       }
   
       const handleSubmitFiel1=async(e)=>{
           e.preventDefault()
-          const response=await updateTransaction()
-          console.log(response)
-          if (response.ok){
-            alert('Transaction Added successfully');
+          updateTransaction()
+          
+          alert('Transaction Added successfully');
             
-          }
+         
     
       }
 

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Popup from 'reactjs-popup'
 
 import {FaUserAlt} from 'react-icons/fa'
-import {BiTransfer} from 'react-icons/bi'
-import {AiFillHome} from 'react-icons/ai'
+import {RiMoneyDollarBoxFill} from 'react-icons/ri'
+import {AiFillHome,AiOutlineClose} from 'react-icons/ai'
 import {FiLogOut} from 'react-icons/fi'
 import { NavLink } from 'react-router-dom';
 
@@ -14,13 +14,8 @@ import {
    
     LogoutButton,
    
-    ModalContainer,
-    CloseButton,
-    ConfirmButton,
-    ModalDesc,
-    ButtonsContainer,
+
   } from './styledComponents'
-import { useHistory } from 'react-router-dom';
   
 const menuItem=[
     {
@@ -31,7 +26,7 @@ const menuItem=[
     {
         path:"/all-transactions",
         name:"Transactions",
-        icon:<BiTransfer/>
+        icon:<RiMoneyDollarBoxFill/>
     },
     
     
@@ -79,35 +74,60 @@ class Sidebar extends Component{
                 </div>
                     <div className="icon">
 
-                    <Popup
-              modal
-              trigger={
-                <LogoutButton type="button">
+                    
+
+            <Popup
+      modal
+      trigger={
+       
+        <LogoutButton type="button">
                   <FiLogOut/>
                 </LogoutButton>
-              }
+       
+      }
+    >
+      {close => (
+        <div className='delete-pop-up'>
+
+          <div className='contaner-popup'>
+            <img src="https://res.cloudinary.com/dmov4v1ui/image/upload/v1691075805/log-out-01_uzh8pg.png" className='popup-image' alt='delete'/>
+          </div>
+
+
+            <div>
+          <h1 className='delete-heading'>Are you sure you want to Logout?</h1>
+          <p className='delete-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </p>
+          
+          <div className='btn-container'>
+            <NavLink to='/login'>
+          <button className='delete-button-12' type="button" onClick={() => close()}>
+          Yes, Logout
+            </button>
+            </NavLink>
+            <button
+              type="button"
+              data-testid="closeButton"
+              onClick={() => close()}
+              className='cancel-button'
             >
-              {close => (
-                <ModalContainer>
-                  <ModalDesc>Are you sure you want to Logout?</ModalDesc>
-                  <ModalDesc>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </ModalDesc>
-                  <ButtonsContainer>
-                    <button
-                      type="button"
-                      className='button-1'
-                      onClick={() => close()}
-                    >
-                      Cancel
-                    </button>
-                 <NavLink to='/login'>
-                    <ConfirmButton type="button">
-                      Confirm
-                    </ConfirmButton>
-                    </NavLink>
-                  </ButtonsContainer>
-                </ModalContainer>
-              )}
-            </Popup>
+              Cancel
+            </button>
+         
+            
+            
+          </div>
+        </div>
+        <AiOutlineClose onClick={() => close()} className='delete'/>
+        </div>
+      )}
+    </Popup>
+
+
+
+
+
+
+            
             </div>
                 
             </div>

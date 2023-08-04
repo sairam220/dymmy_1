@@ -1,8 +1,10 @@
 import { Component } from 'react';
 import './index.css'
 import Sidebar from '../Sidebar';
+import { Rings } from 'react-loader-spinner'
 import MainNavbar from '../MainNavbar';
 import LastThreeCard from '../LastThreeCard'
+import Header from '../Header';
 
 class Transaction extends Component{
 
@@ -17,9 +19,15 @@ onDelete=(id)=>{
     const filterTransactions=allTransaction.filter(each=>(each.id!==id))
     this.setState({allTransaction:filterTransactions})
 }
+
+renderLoadingView= () => (
+    <div className="flex justify-center items-center ">
+      <Rings color="#00BFFF" height={80} width={80} />
+    </div>
+  );
    
 getAlltransactions=async()=>{
-    const url=`https://bursting-gelding-24.hasura.app/api/rest/all-transactions?limit=${20}&offset=${0}`
+    const url=`https://bursting-gelding-24.hasura.app/api/rest/all-transactions?limit=${1000}&offset=${0}`
     const options={
         method:'GET',
         headers:{
@@ -49,9 +57,14 @@ getAlltransactions=async()=>{
     render(){
        
         return(
-            <div className="home-container">
+            <div className='main-home-container'>
+            {
+                this.state.allTransaction.length===0?this.renderLoadingView():
+                <div className="home-container">
                 <Sidebar/>
+                <Header/>
                 <div className='sidebar-container-11'>
+                    
                 <MainNavbar/>
                 <div className="credit-debit-container">
                 <ul className="last-three-transaction-container">
@@ -66,6 +79,9 @@ getAlltransactions=async()=>{
             
             </div>
             </div>
+            }
+            </div>
+           
         )
     }
 }

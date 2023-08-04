@@ -24,11 +24,11 @@ const MainNavbar=()=>{
   
       const editedTransaction={
         user_id:1,
-    name: transactionFullName,
-    type: transactionType,
-    category: transactionCategory,
-    amount: totalAmount,
-    date: fullDate,
+        name: transactionFullName,
+        type: transactionType,
+        category: transactionCategory,
+        amount: totalAmount,
+        date: fullDate,
    
       }
   
@@ -41,30 +41,22 @@ const MainNavbar=()=>{
           },
           body: JSON.stringify(editedTransaction),
         });
-      const data = await response.json()
-      return response
+
+        const data=await response.json()
+        console.log(data)
+      
+      
     }
 
     const handleSubmitFiel=async(e)=>{
         e.preventDefault()
-        const response=await updateTransaction()
-        console.log(response)
-        if (response.ok){
-          alert('Transaction updated successfully');
-          
-        }
-  
+        updateTransaction()
+        alert('Transaction Added successfully');
     }
 
 
 return(
-
-
-
-
-
-
-    <div className='navbar'>
+    <div className='navbar-1'>
         <div className='flex-column'>
          <h1 className='hheading'>Accounts</h1>
          <div className='flex-row'>
@@ -80,15 +72,13 @@ return(
             </Link>
             </div>
             
-         </div>
-         
-
-         <Popup
+        </div>
+        <Popup
       modal
       trigger={
        
          
-        <button className='add-tansaction'>+ Add Transaction</button>
+        <button className='add-tansaction-1'>+ Add Transaction</button>
        
       }
     >
@@ -157,13 +147,9 @@ return(
          
        </form>
       )}
-    </Popup>
-
-
-       
+        </Popup>
     </div>
 )
-
-      }
+}
 
 export default MainNavbar
