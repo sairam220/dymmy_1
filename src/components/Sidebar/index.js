@@ -41,7 +41,9 @@ const menuItem=[
 class Sidebar extends Component{
     state={arrayObjects:menuItem,isOpen:true}
     
-     
+     logout=()=>{
+        localStorage.removeItem('user_id')
+    }
     
 
      
@@ -100,7 +102,7 @@ class Sidebar extends Component{
           
           <div className='btn-container'>
             <NavLink to='/login'>
-          <button className='delete-button-12' type="button" onClick={() => close()}>
+          <button className='delete-button-12' type="button" onClick={this.logout}>
           Yes, Logout
             </button>
             </NavLink>

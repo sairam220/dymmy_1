@@ -101,6 +101,7 @@ class LoginForm extends Component {
                     history.replace('/home')
                     setUserId(data.get_user_id[0].id)
                     this.setState({userLoginId:data.get_user_id[0].id})
+                    localStorage.setItem('user_id',data.get_user_id[0].id)
                     this.setState({showSubmitError:false})
                   }else{
                     this.setState({showSubmitError:true})

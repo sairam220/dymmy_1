@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './components/Login/Login';
+import Login from './components/Login/Login'
 import Profile from './components/Profile/Profile';
 import Transaction from './components/Transaction';
 import Home from './components/Home';
@@ -10,12 +10,15 @@ import LoginContext from './Context'
 import ProtectedRoute from './components/ProtectedRoute';
 import { Component } from 'react';
 
+const userStordId=localStorage.getItem('user_id')
+
 class App extends Component {
 
-  state={userId:'',adminUserOrNot:false}
+  state={userId:userStordId?userStordId:'',adminUserOrNot:false}
 
   setUserId=(userLoginId)=>{
     this.setState({userId:userLoginId})
+    
 
   }
 
