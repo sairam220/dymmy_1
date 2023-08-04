@@ -161,8 +161,9 @@ renderLoadingView= () => (
    :        <div className="home-container">
                 
    <Sidebar/>
-   <div className="sidebar-container-11">
    <Header/>
+   <div className="sidebar-container-11">
+   
        
 <Navbar/>
 <div className="credit-debit-container">

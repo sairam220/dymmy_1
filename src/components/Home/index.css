@@ -50,6 +50,16 @@ padding-left: 10px;
 
 
 
+
+
+.sidebar-container-11{
+    margin-left: 25%;
+    width: 70%;
+   
+    
+
+}
+
 @media screen  and (max-width:768px){
     .sidebar-container-11{
         
@@ -76,13 +86,6 @@ padding-left: 10px;
     border-radius: 25px;
     
     }
-}
-
-.sidebar-container-11{
-    margin-left: 25%;
-    width: 70%;
-    
-
 }
 
 .items-center{

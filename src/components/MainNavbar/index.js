@@ -3,7 +3,7 @@ import {AiOutlineCloseCircle} from 'react-icons/ai'
 import {Popup} from 'reactjs-popup'
 import {v4 as uuidv4} from 'uuid'
 import { useEffect, useState } from 'react'
-
+import LoginContext from '../../Context'
 import './index.css'
 
 
@@ -56,7 +56,13 @@ const MainNavbar=()=>{
 
 
 return(
-    <div className='navbar-1'>
+     
+    <LoginContext.Consumer>
+        {
+            value=>{
+                const {adminUserOrNot}=value
+
+                return( <div className='navbar-1'>
         <div className='flex-column'>
          <h1 className='hheading'>Accounts</h1>
          <div className='flex-row'>
@@ -78,7 +84,7 @@ return(
       trigger={
        
          
-        <button className='add-tansaction-1'>+ Add Transaction</button>
+        !adminUserOrNot&&<button className='add-tansaction1'>+ Add Transaction</button>
        
       }
     >
@@ -143,12 +149,19 @@ return(
            />
          </div>
          
-         <button type="submit">Add Transaction</button>
+         <button type="submit" className='button'>Add Transaction</button>
          
        </form>
       )}
         </Popup>
-    </div>
+    </div>)
+
+            }
+        }
+    </LoginContext.Consumer>
+
+
+   
 )
 }
 

@@ -54,7 +54,7 @@ class Sidebar extends Component{
                  
                   <div className="top_section">
                   
-               <img src='https://res.cloudinary.com/dmov4v1ui/image/upload/v1690789046/Frame_507_fthrk4.png' alt='sidbar'/>
+               <img className='sidebar-image' src='https://res.cloudinary.com/dmov4v1ui/image/upload/v1690789046/Frame_507_fthrk4.png' alt='sidbar'/>
                    
                </div>
                
@@ -80,7 +80,7 @@ class Sidebar extends Component{
       modal
       trigger={
        
-        <LogoutButton type="button">
+        <LogoutButton type="button" className='button'>
                   <FiLogOut/>
                 </LogoutButton>
        

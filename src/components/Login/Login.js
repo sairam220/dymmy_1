@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import LoginContext from '../../Context'
-
+import { Redirect } from 'react-router-dom'
 import './Login.css'
 
 class LoginForm extends Component {
@@ -12,6 +12,7 @@ class LoginForm extends Component {
     password: '',
     showSubmitError: false,
     errorMsg: '',
+    userLoginId:''
   }
 
   onChangeUsername = event => {
@@ -74,7 +75,7 @@ class LoginForm extends Component {
       <LoginContext.Consumer>
         {
           value=>{
-            const {showSubmitError,errorMsg}=this.state
+            const {showSubmitError,errorMsg,userLoginId}=this.state
             const {setUserId,setAdminUserOrNot,adminUserOrNot}=value
 
             console.log(adminUserOrNot)
@@ -99,6 +100,7 @@ class LoginForm extends Component {
                   if (data.get_user_id.length>0){
                     history.replace('/home')
                     setUserId(data.get_user_id[0].id)
+                    this.setState({userLoginId:data.get_user_id[0].id})
                     this.setState({showSubmitError:false})
                   }else{
                     this.setState({showSubmitError:true})
@@ -109,6 +111,11 @@ class LoginForm extends Component {
                   console.log(adminUserOrNot)
 
                   
+            }
+
+
+            if (userLoginId !== '') {
+              return <Redirect to="/home" />
             }
           
 
@@ -127,8 +134,8 @@ class LoginForm extends Component {
                         className="login-website-logo-desktop-img"
                         alt="website logo"
                       />
-                      <div className="input-container">{this.renderUsernameField()}</div>
-                      <div className="input-container">{this.renderPasswordField()}</div>
+                      <div className="input-container-1">{this.renderUsernameField()}</div>
+                      <div className="input-container-1">{this.renderPasswordField()}</div>
                       <button type="submit" className="login-button">
                         Login
                       </button>

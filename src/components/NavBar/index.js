@@ -134,7 +134,7 @@ const Navbar=()=>{
            />
          </div>
          
-         <button type="submit">Add Transaction</button>
+         <button type="submit" className='button'>Add Transaction</button>
          
        </form>
       )}

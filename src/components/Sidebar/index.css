@@ -60,7 +60,7 @@ background: #FFF;
     padding: 10px 15px;
     gap: 15px;
     transition: all 0.5s;
-    
+    margin-bottom: 10px;
     text-decoration: none;
 }
 .link:hover{
@@ -84,7 +84,7 @@ background: #FFF;
 }
 
 .logout{
-    margin-top: 300px;
+    margin-top: 260px;
     display: flex;
 padding: 24px 32px 0px 24px;
 align-items: center;
@@ -146,4 +146,8 @@ line-height: 20px; /* 142.857% */
         width: 0px;
     }
     
+}
+
+.sidebar-image{
+        margin-bottom: 20px;
 }

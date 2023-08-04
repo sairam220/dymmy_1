@@ -160,13 +160,11 @@ const LastThreeCard=(props)=>{
             />
           </div>
           
-          <button type="submit">Edit Transaction</button>
+          <button type="submit" className='button'>Edit Transaction</button>
           
         </form>
        )}
                 </Popup>}
-
-
                 {!adminUserOrNot&&<Popup
        modal
        trigger={
