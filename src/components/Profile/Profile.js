@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Cookies from 'js-cookie'
 import './index.css'
 import Sidebar from '../Sidebar';
+
 import Navbar from '../NavBar';
 import Header from '../Header';
 import LoginContext from '../../Context';
@@ -35,20 +37,15 @@ class Profile extends Component{
   }
 
   renderProfile=()=>{
+    const token = 1
+    const {profileObject}=this.state
+    console.log(profileObject)
+    let singUser=profileObject.filter(each=>each.id===token)
+    singUser=singUser[0]
+    
+    console.log(singUser)
     return(
-    <LoginContext.Consumer>
-      {
-        value=>{
-          const {userId}=value
-          const {profileObject}=this.state
-          console.log(userId)
-          let singUser=profileObject.filter(each=>each.id===userId)
-          singUser=singUser[0]
-          
-          console.log(singUser)
-          
-          return (
-   
+    
             <div className="home-container">
                         <Sidebar/>
                         <Header/>
@@ -113,11 +110,8 @@ class Profile extends Component{
                     
                     </div>
                     </div>
-          )        
-
-        }
-      }
-    </LoginContext.Consumer>
+        
+    
     )
   }
 

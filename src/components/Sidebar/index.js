@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Popup from 'reactjs-popup'
-
+import Cookies from 'js-cookie'
 import {FaUserAlt} from 'react-icons/fa'
 import {RiMoneyDollarBoxFill} from 'react-icons/ri'
 import {AiFillHome,AiOutlineClose} from 'react-icons/ai'
@@ -49,6 +49,7 @@ class Sidebar extends Component{
     
      logout=()=>{
         localStorage.removeItem('user_id')
+        Cookies.remove('jwt_token')
     }
 
     

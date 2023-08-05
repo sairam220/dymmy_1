@@ -39,7 +39,7 @@ class App extends Component {
          
               
               <Route exact path='/' component={Login}/>
-              <ProtectedRoute  path='/home' component={Home}/>
+              <ProtectedRoute exact  path='/home' component={Home}/>
               <ProtectedRoute exact path='/all-transactions' component={Transaction}/>
               <ProtectedRoute exact path='/debit' component={DebitTransaction}/>
               <ProtectedRoute exact path='/credit' component={CreditTransaction}/>

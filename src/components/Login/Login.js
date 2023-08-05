@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import LoginContext from '../../Context'
 import { Redirect } from 'react-router-dom'
+import Cookies from 'js-cookie'
 import './Login.css'
 
 class LoginForm extends Component {
@@ -101,6 +102,9 @@ class LoginForm extends Component {
                     history.replace('/home')
                     setUserId(data.get_user_id[0].id)
                     this.setState({userLoginId:data.get_user_id[0].id})
+                    Cookies.set('jwt_token', data.get_user_id[0].id, {
+                      expires: 30,
+                    })
                     localStorage.setItem('user_id',data.get_user_id[0].id)
                     this.setState({showSubmitError:false})
                   }else{
@@ -115,9 +119,12 @@ class LoginForm extends Component {
             }
 
 
-            if (userLoginId !== '') {
-              return <Redirect to="/home" />
-            }
+            const jwtToken = Cookies.get('jwt_token')
+
+    if (jwtToken !== undefined) {
+      return <Redirect to="/home" />
+    }
+
           
 
 

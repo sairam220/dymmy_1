@@ -1,22 +1,12 @@
 import {Redirect, Route} from 'react-router-dom'
-import LoginContext from '../../Context'
+import Cookies from 'js-cookie'
 
 const ProtectedRoute = props => {
-    return(
-
-    <LoginContext.Consumer>
-        {
-            value=>{
-                const {userId}=value
-                if (userId === "") {
-                    return <Redirect to="/login" />
-                }
-                return <Route {...props} />
-            }
-        }
-    </LoginContext.Consumer>
-    )
-  
+  const token = Cookies.get('jwt_token')
+  if (token === undefined) {
+    return <Redirect to="/login" />
+  }
+  return <Route {...props} />
 }
 
 export default ProtectedRoute
