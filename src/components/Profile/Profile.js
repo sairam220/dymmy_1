@@ -83,7 +83,7 @@ class Profile extends Component{
         
                 <div className='detailes-card'>
                   <lable className='label' for='user-name'>User Name</lable>
-                  <div  className='input-bar' id='code' ><p className='paragraph-input'></p></div>
+                  <div  className='input-bar' id='code' ><p className='paragraph-input'>{singUser&&singUser.name}</p></div>
          
                   <lable className='label' for='mail'>Password</lable>
                   <div  className='input-bar' id='code' ><p className='paragraph-input'>**********</p></div>
