@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.1.1",
     "chartjs-adapter-date-fns": "^3.0.0",
     "flowbite-react": "^0.5.0",
     "mdb-react-ui-kit": "^6.1.0",

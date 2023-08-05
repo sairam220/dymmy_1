@@ -98,18 +98,7 @@ import React from 'react'
        } 
   
   
-       // const renderChartsData = () => { 
-       //   switch (apiStatus) { 
-       //     case apiStatusConstants.success: 
-       //       return renderCharts() 
-       //     case apiStatusConstants.failure: 
-       //       return FailureView() 
-       //     case apiStatusConstants.inProgress: 
-       //       return LoadingView() 
-       //     default: 
-       //       return null 
-       //   } 
-       // } 
+       
   
    return ( 
      <div className='main-container-chart'> 
