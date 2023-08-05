@@ -102,8 +102,7 @@ import React from 'react'
   
    return ( 
      <div className='main-container-chart'> 
-         <h1 className='accounts-head-charts'>Debit & Credit Overview</h1> 
-         {renderCharts()} 
+          {renderCharts()} 
      </div> 
    ) 
  } 
