@@ -19,21 +19,27 @@ import {
   
 const menuItem=[
     {
+        
         path:"/home",
         name:"Dashboard",
-        icon:<AiFillHome/>
+        icon:<AiFillHome/>,
+        clicked:false
     },
     {
+        id:2,
         path:"/all-transactions",
         name:"Transactions",
-        icon:<RiMoneyDollarBoxFill/>
+        icon:<RiMoneyDollarBoxFill/>,
+        clicked:false
     },
     
     
     {
+        id:3,
         path:"/profile",
         name:"Profile",
-        icon:<FaUserAlt/>
+        icon:<FaUserAlt/>,
+        clicked:false
     },
     
 ]
@@ -44,6 +50,8 @@ class Sidebar extends Component{
      logout=()=>{
         localStorage.removeItem('user_id')
     }
+
+    
     
 
      
